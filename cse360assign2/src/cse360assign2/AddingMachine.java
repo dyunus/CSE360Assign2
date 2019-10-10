@@ -5,11 +5,22 @@
  * Assignment Number: 2
  * Description: Contains the AddingMachine Class which performs basic arithmetic operations
  */
+
 package cse360assign2;
 
 public class AddingMachine {
 	
+	/**
+	 * int used to store the total result of arithmetic operations performed by the AddingMachine
+	 */
+	
 	private int total;
+	
+	/**
+	 * String used to store the history of arithmetic operations performed by the AddingMachine
+	 */
+	
+	private String history = "0";
 	
 	/**
 	 * Constructor which creates an Adding Machine
@@ -23,8 +34,9 @@ public class AddingMachine {
 	/**
 	 *  @return returns the current total of the operations performed
 	 */
+	
 	public int getTotal () {
-			return 0;
+			return total;
 		}
 	
 	/**
@@ -33,7 +45,8 @@ public class AddingMachine {
 	 */
 	
 	public void add (int value) {
-		
+		total += value;
+		history += " + " + value;
 	}
 	
 	/**
@@ -42,7 +55,8 @@ public class AddingMachine {
 	 */
 	
 	public void subtract (int value) {
-		
+		total -= value;
+		history += " - " + value;
 	}
 	
 	/**
@@ -50,14 +64,16 @@ public class AddingMachine {
 	 */
 	
 	public String toString () {
-		return "";
+		return history;
 		}
 	
 	/**
-	 *  clears the calculator total and history 
+	 *  clears the AddingMachine's total and history 
 	 */
 	
 	public void clear() {
-		
+		total = 0;
+		history = "0";
 	}
+	
 }
